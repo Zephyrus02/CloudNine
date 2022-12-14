@@ -1,13 +1,26 @@
-body{
-    margin: 0;
-    padding: 0;
-    background-color: rgb(15, 191, 15);
+*{
+	margin: 0;
+	padding: 0;
 }
-.form{
-    width: 200px;
-    margin-left: 600px;
-    padding: 30px;
-    top: 50%;
-    left: 100%;
-    text-align: center;
+body {
+	background: linear-gradient(#e6e6e6, goldenrod);
 }
+h2{
+  color: rgb(37,12,119);
+}
+label{
+  color: rgb(37,12,119);
+}
+nav{
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: goldenrod; 
+  padding: 1.5rem 3.5rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+

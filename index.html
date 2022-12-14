@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calamity Support</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body align="center">
-    <h1> Improved Disaster Response with Machine Learning</h1>
-    <h2>Request immediate support and get help instantly</h2>
-    <form class="form" name="sos" id="sos" action="index.html" method="POST">
-        <h3>First name:</h3>
-        <input type="text" id="name" name="name"><br>
-        <h3>Cause of Distress:</h3>
-        <select name="disaster" id="calamity" form="sos" required>
-            <option value="Floods"></option>
-            <option value="Floods">Floods</option>
-            <option value="Earthquake">Earthquake</option>
-            <option value="Drought">Drought</option>
-            <option value="Plague">Plague</option>
-            <option value="Other">Other</option>
-        </select>
-
-        <h3>Specify Resources:</h3>
-        <label for="F/W">Food and Water:</label><br>
-        <input type="number" name="resource" id="F/W"><br>
-        <label for="Med">Medicine:</label><br>
-        <input type="number" name="resource" id="Med"><br>
-        <label for="Cloth">Clothing and Cover:</label><br>
-        <input type="number" name="resource" id="Cloth"><br>
-        
-        <h3>Specify Resources:</h3>
-        <label for="note">Add a personal note</label><br>
-        <input type="text" name="note" id="note"><br>
-        
-        <br>
-        <input class="btn" type="image" src="https://cdn-icons-png.flaticon.com/512/1403/1403474.png" height="100px">
-      </form><br>
-    
-
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calamity Support</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script defer src="Validate.js"></script>
+        <title>
+          Calamity support</title>
+      </head>
+      <body>
+        <h3><nav>
+            Improved Disaster Response with Machine Learning<sup>Calamity Support</sup>
+          </nav>
+          <center><h2>Request immediate support and get help instantly</h2>
+          <form class="form" name="sos" id="sos" action="/" method="POST">
+              <h3>First name:</h3>
+              <input type="text" id="name" name="name"><br>
+              <h3>Cause of Distress:</h3>
+              <select name="disaster" id="calamity" form="sos" required>
+                  <option value="Floods"></option>
+                  <option value="Floods">Floods</option>
+                  <option value="Earthquake">Earthquake</option>
+                  <option value="Drought">Drought</option>
+                  <option value="Plague">Plague</option>
+                  <option value="Other">Other</option>
+              </select>
+      
+              <h3>Specify Resources:</h3>
+              <label for="F/W">Food and Water:</label><br>
+              <input type="number" min="0" name="FW" id="F/W"><br>
+              <label for="Med">Medicine:</label><br>
+              <input type="number" min="0" name="Med" id="Med"><br>
+              <label for="Cloth">Clothing and Cover:</label><br>
+              <input type="number" min="0" name="Cloth" id="Cloth"><br>
+              
+              <h3>Specify Resources:</h3>
+              <label for="note">Add a personal note</label><br>
+              <input type="text" name="note" id="note"><br>
+              
+              <br>
+              <input class="btn" type="image" src="https://cdn-icons-png.flaticon.com/512/1403/1403474.png" height="100px">
+            </form><br>
+      </body>
+      </html>
 </html>
