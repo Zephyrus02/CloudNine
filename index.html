@@ -7,23 +7,21 @@
     <title>Calamity Support</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body align="center">
     <h1> Improved Disaster Response with Machine Learning</h1>
     <h2>Request immediate support and get help instantly</h2>
-    <form class="form" name="sos" action="index.html" method="POST">
+    <form class="form" name="sos" id="sos" action="index.html" method="POST">
         <h3>First name:</h3>
         <input type="text" id="name" name="name"><br>
         <h3>Cause of Distress:</h3>
-        <input type="radio" id="Floods" name="Calamity">
-        <label for="Calamity">Floods</label><br>
-        <input type="radio" id="Drought" name="Calamity">
-        <label for="Calamity">Drought</label><br>
-        <input type="radio" id="Earthquake" name="Calamity">
-        <label for="Calamity">Earthquake</label><br>
-        <input type="radio" id="Plague" name="Calamity">
-        <label for="Calamity">Plague</label><br>
-        <input type="radio" id="Other" name="Calamity">
-        <label for="Calamity">Other</label><br>
+        <select name="disaster" id="calamity" form="sos" required>
+            <option value="Floods"></option>
+            <option value="Floods">Floods</option>
+            <option value="Earthquake">Earthquake</option>
+            <option value="Drought">Drought</option>
+            <option value="Plague">Plague</option>
+            <option value="Other">Other</option>
+        </select>
 
         <h3>Specify Resources:</h3>
         <label for="F/W">Food and Water:</label><br>

@@ -1,10 +1,13 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: rgb(15, 191, 15);
 }
 .form{
     width: 200px;
+    margin-left: 600px;
     padding: 30px;
     top: 50%;
     left: 100%;
+    text-align: center;
 }
