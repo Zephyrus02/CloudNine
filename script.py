@@ -29,13 +29,13 @@ def guide():
 def display():
 
     mydb = mysql.connector.connect(host="loaclhost", user="root", passwd="1234", database='provider1')
-    fqs = 0
+    fws = 0
     ms = 0
     cls = 0
     mycursor = mydb.cursor()
     mycursor.execute(" select quantity from inventory where category='Food' ")
     for i in mycursor:
-        fqs += i
+        fws += i
 
     mycursor.execute(" select quantity from inventory where category='Med' ")
     for i in mycursor:
@@ -45,7 +45,7 @@ def display():
     for i in mycursor:
         cls += i
 
-    return render_template('display.html', Name=guide.NAME, Calamity=guide.CALAMITY, FW=guide.FW, Med=guide.MED,
+    return render_template('display.html', Name=guide.NAME, Calamity=guide.CALAMITY, FW=guide.FW, FWS=fws, MS=ms, CLS=cls, Med=guide.MED,
                            Cloth=guide.CLOTH, Note=guide.NOTE)
 
 app.run(debug=True)
