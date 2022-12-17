@@ -1,5 +1,24 @@
 from flask import Flask, render_template,request
+from flask_sqlalchemy import SQLAlchemy
+
 app = Flask(__name__)
+db = SQLAlchemy()
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+db.init_app(app)
+
+from script import db
+
+class Support(db.Model):
+    name = db.Column(db.String, primary_key=True, nullable=False)
+    calamity = db.Column(db.String)
+    fw = db.Column(db.Integer)
+    med = db.Column(db.Integer)
+    cloth = db.Column(db.Integer)
+    note = db.Column(db.String)
+
+with app.app_context():
+    db.create_all()
 
 # home function to call homepage for user
 @app.route("/")
@@ -15,6 +34,18 @@ def guide():
     med = request.form['Med']
     cloth = request.form['Cloth']
     note = request.form['note']
+
+    sup = Support(
+        name=name,
+        calamity=calamity,
+        fw=fw,
+        med=med,
+        cloth=cloth,
+        note=note
+    )
+    db.session.add(sup)
+    db.session.commit()
+
     guide.NAME = name
     guide.CALAMITY = calamity
     guide.FW = fw
