@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
+
+    <h1>{{ IO }}</h1>
     <table>
         <tr>
             <th>Name</th>
@@ -17,13 +19,14 @@
             <th>Clothing and Cover</th>
             <th>Note</th>
         </tr>
-        {% for row in op %}
         <tr>
-            {% for cell in row %}
-            <td>{{cell}}</td>
-            {% endfor %}
+            <td>{{Name}}</td>
+            <td>{{Calamity}}</td>
+            <td>{{FW}}</td>
+            <td>{{Med}}</td>
+            <td>{{Cloth}}</td>
+            <td>{{Note}}</td>
         </tr>
-        {% endfor %}
     </table>
 </body>
 </html>

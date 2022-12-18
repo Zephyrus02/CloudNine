@@ -1,10 +1,13 @@
+import mysql.connector
 from flask import Flask, render_template, request
 app = Flask(__name__)
+
 
 # home function to call homepage for user
 @app.route("/")
 def home():
     return render_template('index.html')
+
 
 # guide function to call guidelines page for user
 @app.route("/guide", methods=['GET', 'POST'])
@@ -23,20 +26,18 @@ def guide():
     guide.NOTE = note
     return render_template('guide.html', Name=name, Calamity=calamity, FW=fw, Med=med, Cloth=cloth, Note=note)
 
+
 # display function to call the display page for the responsible authorities
 @app.route("/display", methods=['GET', 'POST'])
 def display():
-    x = []
-    data = []
-    op = ()
-    x.append(guide.NAME)
-    x.append(guide.CALAMITY)
-    x.append(guide.FW)
-    x.append(guide.MED)
-    x.append(guide.CLOTH)
-    x.append(guide.NOTE)
-    data.append(x)
-    op= tuple(data)
-    return render_template('display.html', op=op)
+    db = mysql.connector.connect(host="localhost", user="root", password="root", database="provider1")
+    cursor = db.cursor()
+    cursor.execute("SELECT quantity FROM INVENTORY where item='food'")
+    i = 0
+    for i in cursor:
+        print(i[0])
+    return render_template('display.html', Name=guide.NAME, Calamity=guide.CALAMITY, FW=guide.FW, Med=guide.MED,
+                           Cloth=guide.CLOTH, Note=guide.NOTE, IO=i[0])
+
 
 app.run(debug=True)
