@@ -1,5 +1,6 @@
-from flask import Flask, render_template,request
+from flask import Flask, render_template, request
 app = Flask(__name__)
+import mysql.connector
 
 # home function to call homepage for user
 @app.route("/")
@@ -26,7 +27,12 @@ def guide():
 # display function to call the display page for the responsible authorities
 @app.route("/display", methods=['GET', 'POST'])
 def display():
-    return render_template('display.html', Name=guide.NAME, Calamity=guide.CALAMITY, FW=guide.FW, Med=guide.MED,
-                           Cloth=guide.CLOTH, Note=guide.NOTE)
+    db = mysql.connector.connect(host="localhost", user="root", password="root", database="provider1")
+    mycursor = db.cursor()
+    mycursor.execute("SELECT quantity FROM INVENTORY where item='food'")
+    for i in mycursor:
+        print(i[0])
 
+    return render_template('display.html', Name=guide.NAME, Calamity=guide.CALAMITY, FW=guide.FW, Med=guide.MED,
+                           Cloth=guide.CLOTH, Note=guide.NOTE, IO=i[0])
 app.run(debug=True)
