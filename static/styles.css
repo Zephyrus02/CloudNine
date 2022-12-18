@@ -1,12 +1,21 @@
 *{
-	margin: 0;
-	padding: 0;
+	margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 body {
 	background: linear-gradient(#e6e6e6, goldenrod);
+  text-align: center;
 }
-h2{
-  color: rgb(37,12,119);
+h1{
+  padding-top: 15px;
+}
+
+#h1
+{
+  padding-top: 20px;
 }
 label{
   color: rgb(37,12,119);
@@ -19,8 +28,61 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: goldenrod; 
+  background-color: goldenrod;
   padding: 1.5rem 3.5rem;
+  padding-left: 40px;
+  padding-right: 40px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 }
 
+footer{
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: goldenrod;
+  padding-top: 30px;
+  padding-bottom: 1rem;
+  margin-bottom: -0px;
+  -webkit-box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+}
+#calamity
+{
+  background-color: #fff;
+  padding-bottom: 1px;
+  width: 10rem;
+}
+#distress
+{
+  padding-top: 20px;
+  padding-bottom: 0.0002rem;
+}
+#resources
+{
+  padding-top: 25px;
+}
+#name
+{
+  width: 12rem;
+}
+#fwl
+{
+  padding-bottom: 50px;
+}
+#notel
+{
+  margin-bottom: 0;
+}
+#p1
+{
+  margin-left: 40px;
+}
+#p2
+{
+  margin-right: 40px;
+}

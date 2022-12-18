@@ -32,7 +32,6 @@ def display():
     mycursor.execute("SELECT quantity FROM INVENTORY where item='food'")
     for i in mycursor:
         print(i[0])
-
     return render_template('display.html', Name=guide.NAME, Calamity=guide.CALAMITY, FW=guide.FW, Med=guide.MED,
                            Cloth=guide.CLOTH, Note=guide.NOTE, IO=i[0])
 app.run(debug=True)
