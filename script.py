@@ -26,7 +26,17 @@ def guide():
 # display function to call the display page for the responsible authorities
 @app.route("/display", methods=['GET', 'POST'])
 def display():
-    return render_template('display.html', Name=guide.NAME, Calamity=guide.CALAMITY, FW=guide.FW, Med=guide.MED,
-                           Cloth=guide.CLOTH, Note=guide.NOTE)
+    x = []
+    data = []
+    op = ()
+    x.append(guide.NAME)
+    x.append(guide.CALAMITY)
+    x.append(guide.FW)
+    x.append(guide.MED)
+    x.append(guide.CLOTH)
+    x.append(guide.NOTE)
+    data.append(x)
+    op= tuple(data)
+    return render_template('display.html', op=op)
 
 app.run(debug=True)

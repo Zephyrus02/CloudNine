@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display Alert</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
     <table>
@@ -16,14 +17,13 @@
             <th>Clothing and Cover</th>
             <th>Note</th>
         </tr>
+        {% for row in op %}
         <tr>
-            <td>{{Name}}</td>
-            <td>{{Calamity}}</td>
-            <td>{{FW}}</td>
-            <td>{{Med}}</td>
-            <td>{{Cloth}}</td>
-            <td>{{Note}}</td>
+            {% for cell in row %}
+            <td>{{cell}}</td>
+            {% endfor %}
         </tr>
+        {% endfor %}
     </table>
 </body>
 </html>
