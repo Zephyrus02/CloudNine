@@ -54,11 +54,13 @@ def guide():
 def display():
     db = mysql.connector.connect(host="localhost", user="root", password="root", database="provider1")
     my_cursor = db.cursor()
-    my_cursor.execute("SELECT quantity FROM INVENTORY where item='food'")
+    my_cursor.execute("SELECT quantity FROM INVENTORY where item='Food & Water'")
+    qty = 0
     for i in my_cursor:
-        print(i[0])
+        qty = i[0]
+        print(qty)
     return render_template('display.html', Name=guide.NAME, Lat=guide.lat, Lon=guide.lon, Calamity=guide.CALAMITY,
-                           FW=guide.FW, Med=guide.MED,Cloth=guide.CLOTH, Note=guide.NOTE, IO=i[0])
+                           FW=guide.FW, Med=guide.MED, Cloth=guide.CLOTH, Note=guide.NOTE, IO=qty)
 
 
 app.run(debug=True)
