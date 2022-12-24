@@ -1,7 +1,9 @@
 import mysql.connector
 import requests
+import mysql.connector
 from flask import Flask, render_template, request
 app = Flask(__name__)
+
 
 
 # home function to call homepage for user
@@ -48,7 +50,7 @@ def guide():
 # display function to call the display page for the responsible authorities
 @app.route("/display", methods=['GET', 'POST'])
 def display():
-    db = mysql.connector.connect(host="localhost", user="root", password="root", database="provider")
+    db = mysql.connector.connect(host="localhost", user="root", password="root", database="provider1")
     mycursor = db.cursor()
     mycursor.execute("SELECT quantity FROM INVENTORY where item='food'")
     for i in mycursor:
