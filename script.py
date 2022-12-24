@@ -5,7 +5,6 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-
 # home function to call homepage for user
 @app.route("/")
 def home():
@@ -31,11 +30,11 @@ def guide():
     r = requests.get('https://www.geojs.io')
     print(r)
 
-    ipreq = requests.get('https://get.geojs.io/v1/ip.json')
-    ipadd = ipreq.json()['ip']
-    print(ipadd)
+    ip_req = requests.get('https://get.geojs.io/v1/ip.json')
+    ip_add = ip_req.json()['ip']
+    print(ip_add)
 
-    url = 'https://get.geojs.io/v1/ip/geo/' + ipadd + '.json'
+    url = 'https://get.geojs.io/v1/ip/geo/' + ip_add + '.json'
     geo_req = requests.get(url)
     geodata = geo_req.json()
     print(geodata)
@@ -44,6 +43,9 @@ def guide():
     print(geodata['timezone'])
     print(geodata['country'])
 
+    guide.lat = geodata['latitude']
+    guide.lon = geodata['longitude']
+
     return render_template('guide.html', Name=name, Calamity=calamity, FW=fw, Med=med, Cloth=cloth, Note=note)
 
 
@@ -51,12 +53,12 @@ def guide():
 @app.route("/display", methods=['GET', 'POST'])
 def display():
     db = mysql.connector.connect(host="localhost", user="root", password="root", database="provider1")
-    mycursor = db.cursor()
-    mycursor.execute("SELECT quantity FROM INVENTORY where item='food'")
-    for i in mycursor:
+    my_cursor = db.cursor()
+    my_cursor.execute("SELECT quantity FROM INVENTORY where item='food'")
+    for i in my_cursor:
         print(i[0])
-    return render_template('display.html', Name=guide.NAME, Calamity=guide.CALAMITY, FW=guide.FW, Med=guide.MED,
-                           Cloth=guide.CLOTH, Note=guide.NOTE, IO=i[0])
+    return render_template('display.html', Name=guide.NAME, Lat=guide.lat, Lon=guide.lon, Calamity=guide.CALAMITY,
+                           FW=guide.FW, Med=guide.MED,Cloth=guide.CLOTH, Note=guide.NOTE, IO=i[0])
 
 
 app.run(debug=True)
