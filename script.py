@@ -1,6 +1,5 @@
 import mysql.connector
 import geocoder
-import mysql.connector
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
@@ -28,7 +27,7 @@ def guide():
     guide.NOTE = note
 
     g = geocoder.ip("me")
-    my_add = g.latlng
+    my_add = g.address
     guide.Add = my_add
 
     return render_template('guide.html', Name=name, Calamity=calamity, FW=fw, Med=med, Cloth=cloth, Note=note)
