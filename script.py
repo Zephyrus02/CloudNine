@@ -1,5 +1,5 @@
 import mysql.connector
-import requests
+import geocoder
 import mysql.connector
 from flask import Flask, render_template, request
 app = Flask(__name__)
@@ -27,24 +27,9 @@ def guide():
     guide.CLOTH = cloth
     guide.NOTE = note
 
-    r = requests.get('https://www.geojs.io')
-    print(r)
-
-    ip_req = requests.get('https://get.geojs.io/v1/ip.json')
-    ip_add = ip_req.json()['ip']
-    print(ip_add)
-
-    url = 'https://get.geojs.io/v1/ip/geo/' + ip_add + '.json'
-    geo_req = requests.get(url)
-    geodata = geo_req.json()
-    print(geodata)
-    print(geodata['latitude'])
-    print(geodata['longitude'])
-    print(geodata['timezone'])
-    print(geodata['country'])
-
-    guide.lat = geodata['latitude']
-    guide.lon = geodata['longitude']
+    g = geocoder.ip("me")
+    my_add = g.latlng
+    guide.Add = my_add
 
     return render_template('guide.html', Name=name, Calamity=calamity, FW=fw, Med=med, Cloth=cloth, Note=note)
 
@@ -58,9 +43,8 @@ def display():
     qty = 0
     for i in my_cursor:
         qty = i[0]
-        print(qty)
-    return render_template('display.html', Name=guide.NAME, Lat=guide.lat, Lon=guide.lon, Calamity=guide.CALAMITY,
-                           FW=guide.FW, Med=guide.MED, Cloth=guide.CLOTH, Note=guide.NOTE, IO=qty)
+    return render_template('display.html', Name=guide.NAME, Add=guide.Add, Calamity=guide.CALAMITY,
+                           FW=guide.FW, Med=guide.MED, Cloth=guide.CLOTH, Note=guide.NOTE, F=qty)
 
 
 app.run(debug=True)
