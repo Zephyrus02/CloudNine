@@ -13,24 +13,20 @@ def home():
 # guide function to call guidelines page for user
 @app.route("/guide", methods=['GET', 'POST'])
 def guide():
-    name = request.form['name']
     calamity = request.form['disaster']
     fw = request.form['FW']
     med = request.form['Med']
-    cloth = request.form['Cloth']
     note = request.form['note']
-    guide.NAME = name
     guide.CALAMITY = calamity
     guide.FW = fw
     guide.MED = med
-    guide.CLOTH = cloth
     guide.NOTE = note
 
     g = geocoder.ip("me")
     my_add = g.address
     guide.Add = my_add
 
-    return render_template('guide.html', Name=name, Calamity=calamity, FW=fw, Med=med, Cloth=cloth, Note=note)
+    return render_template('guide.html', Calamity=calamity, FW=fw, Med=med, Note=note)
 
 
 # display function to call the display page for the responsible authorities
@@ -42,8 +38,8 @@ def display():
     qty = 0
     for i in my_cursor:
         qty = i[0]
-    return render_template('display.html', Name=guide.NAME, Add=guide.Add, Calamity=guide.CALAMITY,
-                           FW=guide.FW, Med=guide.MED, Cloth=guide.CLOTH, Note=guide.NOTE, F=qty)
+    return render_template('display.html', Add=guide.Add, Calamity=guide.CALAMITY,
+                           FW=guide.FW, Med=guide.MED, Note=guide.NOTE, F=qty)
 
 
 app.run(debug=True)

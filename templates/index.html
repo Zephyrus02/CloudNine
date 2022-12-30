@@ -1,57 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calamity Support</title>
-        <link rel="icon" type="image/x-icon" href="">
-        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-      </head>
-      <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+      <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home | IDR</title>
+  </head>
+  <body>
+    <div class="">
+      <nav class="nav1">
+        <h2>IMPROVED DISASTER RESPONSE WITH REAL TIME LOCATION MONITORING</h2>
+      </nav>
+      <header>
+        <img class="logo" src="static/logo.png" alt="logo" />
         <nav>
-            <h3>Improved Disaster Response with Machine Learning</h3>
-            <h3 text-align="right">Calamity Support</h3>
-          </nav>
-          <h1 id="h1">Request immediate support and get help instantly</h1>
-          <form class="form" name="sos" id="sos" action="/guide" method="POST">
-            <div class="name">
-              <h1 id="fullname">Full name:</h1>
-              <input type="text" id="name" name="name"><br>
-              <h1 id="distress">Cause of Distress:</h1>
-              <select name="disaster" id="calamity" form="sos" required>
-                  <option value="Floods"></option>
-                  <option value="Floods">Floods</option>
-                  <option value="Earthquake">Earthquake</option>
-                  <option value="Drought">Drought</option>
-                  <option value="Plague">Plague</option>
-                  <option value="Other">Other</option>
-              </select>
-              <h2 id="resources">Specify Resources:</h2>
-              <label for="FW">Food and Water:</label><br>
-              <input type="number" min="0" name="FW" id="FW"><br>
-              <label for="Med">Medicine:</label><br>
-              <input type="number" min="0" name="Med" id="Med"><br>
-              <label for="Cloth">Clothing and Cover:</label><br>
-              <input type="number" min="0" name="Cloth" id="Cloth"><br>
-              <br>
-              <label for="note"><h3>Add a personal note</h3></label><br>
-              <input type="text" name="note" id="note">
-            </div>
-              <br>
-              <input class="btn" type="image" src="https://cdn-icons-png.flaticon.com/512/1403/1403474.png" height="100px" formtarget="_blank">
-            </form><br>
-            <footer id="footer">
-              <p id="p1">
-                Model created for GCCP Project | <a href = "mailto: cloudnine.gcp@gmail.com">Reach us by mail</a>
-              </p>
-              <br>
-              <p id="p2">
-                Copyright &copy; All rights reserved.
-              </p>
-            </footer>
-      </body>
-      </html>
+          <ul class="nav2">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Get involved</a></li>
+          </ul>
+        </nav>
+        <a class="btn" href="#"><button>Donate Now</button></a>
+      </header>
+    </div>
+    <hr>
+    <div>
+      <form class="frm" name="sos" id="sos" action="/guide" method="POST">
+        <table>
+            <tr>
+                <td>Cause of Distress:</td>
+                <td>
+                    <select class="cause" name="disaster" required>
+                        <option></option>
+                        <option>Floods</option>
+                        <option>Earthquake</option>
+                        <option>Plague</option>
+                        <option>Covid-19</option>
+                        <option>Others</option>
+                    </select>
+                </td>
+            </tr>
+            </table>
+            <h1 class="specify">Specify Resources:</h1>
+            <table>
+            <tr>
+                <td>Food and Water:</td>
+                <td><input class="inpt1" type="number" name="FW" required></td>
+            </tr>
+            <tr>
+                <td>Medicine Units:</td>
+                <td><input class="inpt2" type="number" name="Med" required></td>
+            </tr>
+            <tr>
+                <td>Add a personal note:</td>
+                <td>
+                    <textarea class="note" name="note" id="note" cols="25" rows="5" placeholder="Important note (if any)"></textarea>
+                </td>
+            </tr>
+        </table>
+        <input class="btn" type="image" src="https://cdn-icons-png.flaticon.com/512/1403/1403474.png" height="100px"/>
+      </form>
+    </div>
+  </body>
 </html>

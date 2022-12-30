@@ -1,88 +1,150 @@
-*{
-	margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+*
+{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
-body {
-	background: linear-gradient(#e6e6e6, goldenrod);
-  text-align: center;
+.nav1
+{
+    background-color: #6b8e5c;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    transition: all 0.3s ease 0s;
 }
-h1{
-  padding-top: 15px;
+.nav1 h2
+{
+    font-size: 20px;
+    margin: 0;
 }
+/* .nav2
+{
+    display: flex;
+    word-spacing: 20px;
+    justify-content: space-between;
+    padding-left: 500px;
+} */
+header
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 2%;
 
-#h1
+}
+li, a, button
 {
-  padding-top: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
 }
-label{
-  color: rgb(37,12,119);
+.logo
+{
+    cursor: pointer;
+    width: 200px;
+    margin-right: auto;
+    mix-blend-mode: color-burn;
 }
-nav{
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: goldenrod;
-  padding: 1.5rem 3.5rem;
-  padding-left: 40px;
-  padding-right: 40px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
-}
+.nav2
+{
+    list-style: none;
 
-footer{
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: goldenrod;
-  padding-top: 30px;
-  padding-bottom: 1rem;
-  margin-bottom: -0px;
-  -webkit-box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
-  box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
 }
-#calamity
+.nav2 li
 {
-  background-color: #fff;
-  padding-bottom: 1px;
-  width: 10rem;
+    display: inline-block;
+    padding: 0px 20px;
+    margin-top: 15px;
+    margin-right: 45px;
 }
-#distress
+.nav2 li a
 {
-  padding-top: 20px;
-  padding-bottom: 0.0002rem;
+    transition: all 0.3s ease 0s;
 }
-#resources
+.nav2 li a:hover
 {
-  padding-top: 25px;
+    color: red;
 }
-#name
+button
 {
-  width: 12rem;
+    padding: 9px 25px;
+    background-color: rgb(255, 204, 0);
+    border: none;
+    color: #000;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-weight: 900;
 }
-#fwl
+button:hover
 {
-  padding-bottom: 50px;
+    background-color: rgb(255, 111, 111);
 }
-#notel
+.nav1:hover
 {
-  margin-bottom: 0;
+    color: rgb(255, 204, 0);
 }
-#p1
+.ftr
 {
-  margin-left: 40px;
+    display: flex;
+    direction: column;
 }
-#p2
+/* .nav2 img
 {
-  margin-right: 40px;
+    width: 80px;
+    margin-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+} */
+.frm
+{
+    margin-left: 45px;
+    margin-top: 40px;
+    font-size: 25px;
+}
+.inpt1
+{
+    width: 150px;
+    height: 30px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+.inpt2
+{
+    width: 150px;
+    height: 30px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+.note
+{
+    width: 300px;
+    height: 200px;
+    margin-left: 30px;
+    border-radius: 10px;
+}
+.cause
+{
+    margin-left: 30px;
+    width: 150px;
+    height: 30px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+h1
+{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-left: 200px;
+    font-weight: 800;
+    font-size: 45px;
+    color: red;
 }
