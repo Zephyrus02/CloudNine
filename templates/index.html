@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-      <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,7 +15,7 @@
     <title>Home | IDR</title>
   </head>
   <body>
-    <div class="">
+    <div class="register">
       <nav class="nav1">
         <h2>IMPROVED DISASTER RESPONSE WITH REAL TIME LOCATION MONITORING</h2>
       </nav>
@@ -31,43 +31,57 @@
         <a class="btn" href="#"><button>Donate Now</button></a>
       </header>
     </div>
-    <hr>
-    <div>
+    <hr />
+    <div class="everything">
       <form class="frm" name="sos" id="sos" action="/guide" method="POST">
-        <table>
-            <tr>
-                <td>Cause of Distress:</td>
-                <td>
-                    <select class="cause" name="disaster" required>
-                        <option></option>
-                        <option>Floods</option>
-                        <option>Earthquake</option>
-                        <option>Plague</option>
-                        <option>Covid-19</option>
-                        <option>Others</option>
-                    </select>
-                </td>
-            </tr>
-            </table>
-            <h1 class="specify">Specify Resources:</h1>
-            <table>
-            <tr>
-                <td>Food and Water:</td>
-                <td><input class="inpt1" type="number" name="FW" required></td>
-            </tr>
-            <tr>
-                <td>Medicine Units:</td>
-                <td><input class="inpt2" type="number" name="Med" required></td>
-            </tr>
-            <tr>
-                <td>Add a personal note:</td>
-                <td>
-                    <textarea class="note" name="note" id="note" cols="25" rows="5" placeholder="Important note (if any)"></textarea>
-                </td>
-            </tr>
+        <table class="tab1">
+          <tr>
+            <td>Cause of Distress:</td>
+            <td>
+              <select class="cause" name="disaster" required>
+                <option></option>
+                <option>Floods</option>
+                <option>Earthquake</option>
+                <option>Plague</option>
+                <option>Covid-19</option>
+                <option>Others</option>
+              </select>
+            </td>
+          </tr>
         </table>
-        <input class="btn" type="image" src="https://cdn-icons-png.flaticon.com/512/1403/1403474.png" height="100px"/>
+        <h1 class="specify">Specify Resources:</h1>
+        <table>
+          <tr>
+            <td>Food and Water:</td>
+            <td><input class="inpt1" type="number" name="FW" required /></td>
+          </tr>
+          <tr>
+            <td>Medicine Units:</td>
+            <td><input class="inpt2" type="number" name="Med" required /></td>
+          </tr>
+          <tr>
+            <td>Add a personal note:</td>
+            <td>
+              <textarea
+                class="note"
+                name="note"
+                cols="25"
+                rows="5"
+                placeholder="Important note (if any)"
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+        <input class="btn8" type="image" src="https://cdn-icons-png.flaticon.com/512/1403/1403474.png" height="100px"/>
       </form>
+      <footer class="ftr">
+      <div class="last">
+        <p>
+          Model created for GCCP Project | <a href="mailto: cloudnine.gcp@gmail.com">Reach us by mail</a>
+        </p>
+        <p>Copyright &copy; All rights reserved.</p>
+      </div>
+      </footer>
     </div>
   </body>
 </html>

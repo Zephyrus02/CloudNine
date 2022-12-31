@@ -22,13 +22,6 @@
     font-size: 20px;
     margin: 0;
 }
-/* .nav2
-{
-    display: flex;
-    word-spacing: 20px;
-    justify-content: space-between;
-    padding-left: 500px;
-} */
 header
 {
     display: flex;
@@ -94,19 +87,21 @@ button:hover
 {
     display: flex;
     direction: column;
+    font-size: 40;
+    text-align: center;
+    padding-left: 500px;
+    background-color: rgb(255, 204, 0);
+    margin-bottom: 0;
+    margin-top: 0;
+    font-weight: 900;
+    padding-top: 15px;
 }
-/* .nav2 img
-{
-    width: 80px;
-    margin-left: 20px;
-    margin-top: 8px;
-    margin-bottom: 5px;
-} */
 .frm
 {
-    margin-left: 45px;
+    margin-left: 90px;
     margin-top: 40px;
     font-size: 25px;
+    padding-left: 350px;
 }
 .inpt1
 {
@@ -133,18 +128,24 @@ button:hover
 }
 .cause
 {
-    margin-left: 30px;
+    margin-left: 64px;
     width: 150px;
     height: 30px;
     border-radius: 30px;
     margin-bottom: 20px;
+    font-weight: 900;
 }
 h1
 {
     padding-top: 20px;
     padding-bottom: 30px;
-    padding-left: 200px;
+    padding-left: 60px;
     font-weight: 800;
     font-size: 45px;
     color: red;
+}
+.btn8
+{
+    padding-left: 250px;
+    margin-top: 20px;
 }
